@@ -1,0 +1,36 @@
+.page-header {
+    background-color: orange;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header a {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+h1, h3, h2, h4 {
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    font-size: 48px;
+}
+
+.content{
+    margin-left: 40px;
+}
+
+.date {
+    color: gray;
+}
+
+.post {
+    margin-bottom: 7px;
+}
+
+.post h1 a {
+    color: black;
+}
+
+.post h1 a:visited{
+    color: darkblue;
+}
