@@ -41,3 +41,13 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
         context = {'form':form}
     return render(request, 'blog/post_edit.html', context)
+
+def post_draft_list(request):
+    posts = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
+    context = {'posts':posts}
+    return render(request, 'blog/post_draft_list.html', context)
+
+def post_publish(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.publish()
+    return redirect('post_detail', pk=pk)
