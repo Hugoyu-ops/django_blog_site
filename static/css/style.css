@@ -49,3 +49,7 @@ h1, h3, h2, h4 {
     margin-right: 20px;
     font-size: 26pt;
 }
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}
