@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post
+from .models import Post, comment
 from django.utils import timezone
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
@@ -72,3 +72,9 @@ def add_comment_topost(request, pk):
         form = CommentForm()
 
     return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
+def remove_comment(request, pk):
+    comments = get_object_or_404(comment, pk=pk)
+    comments.delete()
+    return redirect('post_detail', pk=comment.post.pk)
+
