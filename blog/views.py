@@ -78,3 +78,7 @@ def remove_comment(request, pk):
     comments.delete()
     return redirect('post_detail', pk=comment.post.pk)
 
+def comment_approve(request, pk):
+    comments = get_object_or_404(comment, pk=pk)
+    comments.approve()
+    return redirect('post_detail', pk=comment.post.pk)
